@@ -1,48 +1,44 @@
     {
         "manifestVersion": 1,
-        "id": "7zip-d",
-        "version": "0.1.0",
+        "id": "7zip-t",
+        "version": "0.1.1",
         "name": "7zip task",
-        "description": "A sample Visual Studio Services extension.",
-        "publisher": "gianmariaricci",
+        "description": "A sample task to use 7zip",
+        "categories": [
+            "Build and release"
+        ],
+        "publisher": "Alkampfer",
+        "public": false,
         "targets": [
             {
                 "id": "Microsoft.VisualStudio.Services"
-                }
-            ],
-        "icons": {
-            "default": "images/logo.png"
-         },
-        "contributions": [
-            {
-                "id": "Fabrikam.HelloWorld",
-                "type": "ms.vss-web.hub",
-                "description": "Adds a 'Hello' hub to the Work hub group.",
-                "targets": [
-                    "ms.vss-work-web.work-hub-group"
-                    ],
-                "properties": {
-                    "name": "Hello",
-                    "order": 99,
-                    "uri": "hello-world.html"
-                }
             }
         ],
+        "icons": {
+            "default": "images/logo.png"
+        },
         "scopes": [
             "vso.work"
         ],
         "files": [
             {
-                "path": "hello-world.html", "addressable": true
+                "path": "tasks/7zip",
+                "addressable": true
             },
             {
-                "path": "scripts", "addressable": true
-            },
-            {
-                "path": "sdk/scripts", "addressable": true
-            },
-            {
-                "path": "images/logo.png", "addressable": true
+                "path": "images/logo.png"
             }
-        ]
+        ],
+        "contributions": [
+        {
+            "id": "7zip-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/7zip"
+            }
+        }
+    ]
     }

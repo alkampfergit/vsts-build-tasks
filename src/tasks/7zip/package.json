@@ -1,0 +1,11 @@
+{
+  "name": "SevenZip",
+  "version": "0.1.1",
+  "description": "Sample task to use 7zip during a build",
+  "author": "Ricci Gian Maria",
+  "releaseNotes":"First release",
+  "license": "None",
+  "devDependencies": {
+    "vso-task-lib": "^0.5.1"
+  }
+}

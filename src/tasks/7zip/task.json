@@ -1,0 +1,57 @@
+{
+  "id": "e17b3c30-7438-11e7-89d7-ed39d6ac782e",
+  "name": "7zip",
+  "friendlyName": "7zip",
+  "description": "Simple script to use exceptional 7zip compressor in your build",
+  "author": "Gian Maria Ricci",
+  "helpMarkDown": "This task simply invokes 7zip command line",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "9"
+  },
+  "releaseNotes":"First version of the task",
+  "minimumAgentVersion": "1.91.0",
+  "instanceNameFormat": "7Zip $(message)",
+  "inputs": [
+    {
+      "name": "compress",
+       "type": "boolean",
+       "label": "Compress",
+       "defaultValue": "True",
+       "required": true,
+       "helpMarkDown": "True if you want to compress, false if you want to uncompress"
+    },
+    {
+      "name": "source",
+       "type": "string",
+       "label": "Source folder",
+       "defaultValue": "",
+       "required": true,
+       "helpMarkDown": "Source folder you want to compress"
+    },
+    {
+      "name": "destination",
+       "type": "string",
+       "label": "Destination file",
+       "defaultValue": "",
+       "required": true,
+       "helpMarkDown": "File name of the resulting 7zip file. If file ends with zip, standard zip format will be used."
+    }
+  ],
+  "execution": {
+    
+    "PowerShell": {
+      "target": "$(currentDirectory)\\compression.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)",
+      "platforms": [ "windows" ]
+    }
+  }
+}
