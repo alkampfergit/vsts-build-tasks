@@ -1,9 +1,9 @@
     {
         "manifestVersion": 1,
-        "id": "7zip-t",
-        "version": "0.1.1",
-        "name": "7zip task",
-        "description": "A sample task to use 7zip",
+        "id": "alk-exstensions",
+        "version": "0.2.8",
+        "name": "Simple VSTS Extension tasks",
+        "description": "Series of simple utilites task for VSTS",
         "categories": [
             "Build and release"
         ],
@@ -26,6 +26,10 @@
                 "addressable": true
             },
             {
+                "path": "tasks/dumpenv",
+                "addressable": true
+            },
+            {
                 "path": "images/logo.png"
             }
         ],
@@ -38,6 +42,16 @@
             ],
             "properties": {
                 "name": "tasks/7zip"
+            }
+        },
+         {
+            "id": "dumpenv-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/dumpenv"
             }
         }
     ]
