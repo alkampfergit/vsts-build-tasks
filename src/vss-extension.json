@@ -1,7 +1,7 @@
     {
         "manifestVersion": 1,
         "id": "alk-exstensions",
-        "version": "0.2.11",
+        "version": "0.2.22",
         "name": "Simple VSTS Extension tasks",
         "description": "Series of simple utilites task for VSTS",
         "categories": [
