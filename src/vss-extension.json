@@ -1,7 +1,7 @@
     {
         "manifestVersion": 1,
         "id": "alk-exstensions",
-        "version": "0.2.10",
+        "version": "0.2.11",
         "name": "Simple VSTS Extension tasks",
         "description": "Series of simple utilites task for VSTS",
         "categories": [
@@ -9,11 +9,21 @@
         ],
         "publisher": "Alkampfer",
         "public": false,
+        "tags" : "build, release, utilities",
         "targets": [
             {
                 "id": "Microsoft.VisualStudio.Services"
             }
         ],
+        "repository": {
+            "type": "git",
+            "uri": "https://github.com/alkampfergit/vsts-build-tasks"
+        },
+        "content" : {
+            "details": {
+                "path": "readme.md"
+            }
+        },
         "icons": {
             "default": "images/logo.png"
         },
