@@ -4,7 +4,7 @@
   "friendlyName": "Dump Environment Variables",
   "description": "Simple task to add a full dump of environment variables in build summary.",
   "author": "Gian Maria Ricci",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "# Dump environment variables",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "7"
+    "Patch": "9"
   },
   "minimumAgentVersion": "1.91.0",
   "instanceNameFormat": "dumpenv $(message)",

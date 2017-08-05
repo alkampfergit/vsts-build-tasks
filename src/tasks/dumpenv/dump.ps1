@@ -5,21 +5,19 @@ param()
 # https://github.com/Microsoft/vsts-task-lib
 Trace-VstsEnteringInvocation $MyInvocation
 try {
-    # Set the working directory.
-    $cwd = Get-VstsInput -Name cwd -Require
-    Assert-VstsPath -LiteralPath $cwd -PathType Container
+
    $var = (Get-ChildItem env:*).GetEnumerator() | Sort-Object Name
    $out = ""
    Foreach ($v in $var) {$out = $out + "`t{0,-28} = {1,-28}`n" -f $v.Name, $v.Value}
 
-   write-output "dump variables on $env:BUILD_ARTIFACTSTAGINGDIRECTORY\test.md"
-   $fileName = "$env:BUILD_ARTIFACTSTAGINGDIRECTORY\test.md"
-   set-content $fileName $out
+   $fileName = [System.IO.Path]::GetTempFileName();
+   Write-Output "dump variables on $fileName"
+   Set-Content $fileName $out
 
-    write-output "##vso[task.addattachment type=Distributedtask.Core.Summary;name=Environment Variables;]$fileName"
+   Write-Output "##vso[task.addattachment type=Distributedtask.Core.Summary;name=Environment Variables;]$fileName"
 
-    # Output the message to the log.
-    Write-Host (Get-VstsInput -Name msg)
+   # Output the message to the log.
+   Write-Output (Get-VstsInput -Name msg)
 } finally {
     Trace-VstsLeavingInvocation $MyInvocation
 }
